@@ -103,12 +103,13 @@ const Hero = () => {
         animate={{ backgroundColor: activeData.bgColor }}>
 
         <Navbar />
+       
         {/* hero section  */}
         <div className="min-h-[calc(100vh-122.2px)]  text-white">
-          <div className="container h-full pt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 pb-2">
+          <div className="container h-full py-2 grid grid-cols-1 lg:grid-cols-2 gap-10 border">
 
             {/* left div info  */}
-            <div className="flex flex-col space-y-5 place-content-end lg:max-w-xl order-2 lg:order-1">
+            <div className="flex flex-col space-y-5 place-content-end lg:max-w-xl order-2 lg:order-1 border">
               <AnimatePresence mode="wait">
                 <UpdateFollower
                   mouseOptions={{
@@ -172,9 +173,9 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeIn" }}
                 className="flex gap-5 items-center justify-center md:justify-start broder-2 w-full">
-                <div className="h-px w-20 bg-white"></div>
+                <div className="h-px w-10 md:w-20 bg-white"></div>
                 <p className="uppercase">Top recomendation</p>
-                <div className="h-px w-20 bg-white"></div>
+                <div className="h-px w-10 md:w-20 bg-white"></div>
               </motion.div>
 
               {/* switch cane  */}
@@ -182,8 +183,8 @@ const Hero = () => {
                 variants={parentVar}
                 initial="hidden"
                 animate="show"
-                className="cane-container grid grid-cols-3 gap-8  py-2 overflow-hidden">
-                    
+                className="cane-container border grid grid-cols-3 gap-8 py-2 overflow-hidden px-8 lg:px-0">
+
                 {heroData.map((item) => (
                   <UpdateFollower
                   key={item.id}
@@ -204,9 +205,9 @@ const Hero = () => {
                     variants={childVar}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleActiveData(item)}
-                    className="flex flex-col items-center space-y-3 cursor-pointer ">
+                    className="flex flex-col items-center space-y-3 cursor-pointer border">
                     <div className="img">
-                      <img key={activeData.id} src={item.image} alt="" className={`max-w-24 img-shadow ${activeData.image === item.image ? "opacity-100 scale-105" : "opacity-50"}`} />
+                      <img key={activeData.id} src={item.image} alt="" className={`max-w-[70px] sm:max-w-24 img-shadow ${activeData.image === item.image ? "opacity-100 scale-105" : "opacity-50"}`} />
                     </div>
                     <div className="text-center">
                       <p className="text-white/50">{item.price}</p>
@@ -218,9 +219,10 @@ const Hero = () => {
               </motion.div>
             </div>
             {/* left div hero end */}
+         
 
             {/* right div start  */}
-            <div className=" overflow-hidden place-content-end place-items-center order-1 lg:order-2">
+            <div className=" overflow-hidden place-content-end place-items-center order-1 lg:order-2 border">
               <motion.img
                 variants={SlideRight(0.4)}
                 initial="hidden"
@@ -238,8 +240,12 @@ const Hero = () => {
             </a>
           </div>
 
+         
+
+
         </div>
       </motion.section>
+     
     </>
   );
 };

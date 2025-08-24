@@ -35,10 +35,10 @@ const NavbarMenu = [
 const Navbar = () => {
     return (
         <header className="text-white">
-            <div className="container flex justify-between items-center py-5">
+            <div className="container flex justify-between items-center py-1 ">
                 {/* logo div  */}
                 <div className="logo">
-                    <img src="/Images/logo.png" alt="" className="max-w-20 invert" />
+                    <img src="/Images/logo.png" alt="" className="max-w-20 invert " />
                 </div>
 
                 {/* navLinks  */}

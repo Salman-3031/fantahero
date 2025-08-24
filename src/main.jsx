@@ -6,7 +6,8 @@ import { MouseFollower } from 'react-mouse-follower'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MouseFollower />
+    <MouseFollower 
+    options={{magnetic: true, magneticForce: 0.4}}/>
     <App />
   </StrictMode>,
 )
