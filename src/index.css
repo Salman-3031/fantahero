@@ -6,6 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar{
+  scrollbar-width: none;
+}
 
 @layer base {
   .text-shadow {
