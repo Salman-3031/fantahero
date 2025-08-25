@@ -105,8 +105,8 @@ const Hero = () => {
         <Navbar />
        
         {/* hero section  */}
-        <div className="min-h-[calc(100vh - 86.89px)]  text-white">
-          <div className="container pb-1 pt-[10px] grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+        <div className="min-h-[calc(100vh-86.89px)] border text-white grid place-items-center">
+          <div className="container pb-1 pt-2 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
 
             {/* left div info  */}
             <div className="flex flex-col space-y-4 place-content-end lg:max-w-xl order-2 lg:order-1 ">
