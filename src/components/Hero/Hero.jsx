@@ -105,11 +105,11 @@ const Hero = () => {
         <Navbar />
        
         {/* hero section  */}
-        <div className="min-h-[calc(100vh-122.2px)]  text-white">
-          <div className="container h-full py-2 grid grid-cols-1 lg:grid-cols-2 gap-10 border">
+        <div className="min-h-[calc(100vh - 86.89px)]  text-white">
+          <div className="container pb-1 pt-[10px] grid grid-cols-1 lg:grid-cols-2 gap-10 ">
 
             {/* left div info  */}
-            <div className="flex flex-col space-y-5 place-content-end lg:max-w-xl order-2 lg:order-1 border">
+            <div className="flex flex-col space-y-4 place-content-end lg:max-w-xl order-2 lg:order-1 ">
               <AnimatePresence mode="wait">
                 <UpdateFollower
                   mouseOptions={{
@@ -126,7 +126,7 @@ const Hero = () => {
                     initial="hidden"
                     animate="show"
                     exit="exit"
-                    className="text-4xl sm:text-5xl md:text-7xl font-handWritten text-shadow">{activeData.title}</motion.h1>
+                    className="text-4xl sm:text-5xl md:text-6xl font-handWritten text-shadow">{activeData.title}</motion.h1>
                 </UpdateFollower>
               </AnimatePresence>
 
@@ -137,7 +137,7 @@ const Hero = () => {
                   initial="hidden"
                   animate="show"
                   exit="exit"
-                  className="text-white/80 leading-loose">{activeData.subtitle}</motion.p>
+                  className="text-white/80 leading-loose text-xs">{activeData.subtitle}</motion.p>
               </AnimatePresence>
 
               <div className="flex justify-start">
@@ -147,8 +147,9 @@ const Hero = () => {
                       backgroundColor: "white",
                       zIndex: 10,
                       followSpeed: 0.5,
-                      scale: 6,
+                      scale: 5,
                       rotate: -720,
+                      // round: 5,
                       backgroundElement: (
                         <div className="p-1">
                           <img src={activeData.image} alt="" />
@@ -183,21 +184,21 @@ const Hero = () => {
                 variants={parentVar}
                 initial="hidden"
                 animate="show"
-                className="cane-container border grid grid-cols-3 gap-8 py-2 overflow-hidden px-8 lg:px-0">
+                className="cane-container  grid grid-cols-3 gap-8 py-2 overflow-hidden px-8 lg:px-0">
 
                 {heroData.map((item) => (
                   <UpdateFollower
                   key={item.id}
                   mouseOptions={{
                     backgroundColor: "white",
-                    scale: 4,
+                    scale: 3,
                     zIndex: 10,
                     followSpeed: 0.5,
                     text: 'View Details',
                     textFontSize: '3px',
                     textFontFamily: 'fantasy',
                     textColor: item.bgColor,
-                    radius: 8
+                    radius: 6
                   }}
                   >
                   <motion.div
@@ -205,7 +206,7 @@ const Hero = () => {
                     variants={childVar}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleActiveData(item)}
-                    className="flex flex-col items-center space-y-3 cursor-pointer border">
+                    className="flex flex-col items-center space-y-3 cursor-pointer">
                     <div className="img">
                       <img key={activeData.id} src={item.image} alt="" className={`max-w-[70px] sm:max-w-24 img-shadow ${activeData.image === item.image ? "opacity-100 scale-105" : "opacity-50"}`} />
                     </div>
@@ -222,7 +223,7 @@ const Hero = () => {
          
 
             {/* right div start  */}
-            <div className=" overflow-hidden place-content-end place-items-center order-1 lg:order-2 border">
+            <div className=" overflow-hidden place-content-end place-items-center order-1 lg:order-2 ">
               <motion.img
                 variants={SlideRight(0.4)}
                 initial="hidden"
@@ -234,7 +235,7 @@ const Hero = () => {
             {/* right div end  */}
           </div>
 
-          <div className="text-4xl text-white fixed z-[999] bottom-10 right-10 hover:rotate-[360deg] mix-blend-difference border transition-transform duration-500">
+          <div className="text-4xl text-white fixed z-[999] bottom-10 right-10 hover:rotate-[360deg] mix-blend-difference  transition-transform duration-500">
             <a href="#">
               <FaWhatsapp />
             </a>
